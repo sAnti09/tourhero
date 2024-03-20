@@ -2,6 +2,8 @@
 import type { TourType } from '@/_types/data'
 import ItineraryItemView from '@/components/ItineraryItemView.vue'
 import Carousel from '@/components/CarouselView.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
 
 const { tour } = defineProps<{
   tour: TourType
@@ -11,7 +13,7 @@ const { region, country, category, name, description, itinerary, id, videoUrl, p
 </script>
 
 <template>
-  <Carousel :photos="photoUrls"/>
+  <Carousel :photos="photoUrls" />
   <div class="wrapper">
     <div class="tour">
       <div>
@@ -19,20 +21,19 @@ const { region, country, category, name, description, itinerary, id, videoUrl, p
           <div class="breadcrumbs">
             {{ region }} > {{ country }} > {{ category }}
           </div>
-          <div>
-            ID: {{ id }}
-          </div>
+          <div>ID: {{ id }}</div>
         </div>
 
         <h1>{{ name }}</h1>
         <div class="description">{{ description }}</div>
       </div>
 
-      <h3>Itinerary</h3>
-      <div>
-        <div v-for="item in itinerary" :key="item.id">
-          <ItineraryItemView :item="item" />
-        </div>
+      <h3>
+        <FontAwesomeIcon :icon="faMapLocation" />
+        Itinerary
+      </h3>
+      <div class="itinerary-list">
+        <ItineraryItemView v-for="item in itinerary" :key="item.id" :item="item" />
       </div>
     </div>
   </div>
@@ -76,6 +77,13 @@ const { region, country, category, name, description, itinerary, id, videoUrl, p
   .description {
     font-size: 14px;
     font-weight: 500;
+  }
+
+  .itinerary-list {
+    overflow-y: scroll;
+    max-height: 500px;
+    scrollbar-color: #32555F transparent;
+    scrollbar-width: thin;
   }
 }
 </style>

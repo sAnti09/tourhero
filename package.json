@@ -13,6 +13,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "swiper": "^11.0.7",
     "vue": "^3.4.21",
     "vue-awesome-swiper": "^5.0.1"

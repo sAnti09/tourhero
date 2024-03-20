@@ -38,17 +38,42 @@ const setSwiperRef = (swiper: SwiperClass) => {
   </Swiper>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 .carousel {
   position: absolute;
   width: 100%;
   z-index: -1;
   top: 0;
+  left: 0;
 
   .photo {
     height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 2.2em;
+
+    &:after {
+      font-size: 12px !important;
+      font-weight: bold !important;
+      color: black;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 27%
+  }
+
+  .swiper-button-next {
+    right: 27%
   }
 }
 </style>
