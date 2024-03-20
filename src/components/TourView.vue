@@ -8,7 +8,7 @@ import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
 const { tour } = defineProps<{
   tour: TourType
 }>()
-const { region, country, category, name, description, itinerary, id, videoUrl, photoUrls } = tour
+const { region, country, category, name, description, itinerary, id, photoUrls } = tour
 
 </script>
 

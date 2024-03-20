@@ -109,6 +109,7 @@ const { item } = defineProps<{
       line-height: 2.2em;
       top: 50%;
       margin-top: -14px;
+      cursor: pointer;
 
       &.left-chevron {
         left: 0;

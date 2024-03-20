@@ -6,7 +6,7 @@ const itineraries = [
     title: 'See the largest indoor water fall in the world',
     description: 'Just how much mind-boggling can be packed into a 14-day holiday? Well we\'ll tell you. Our hot adventure pack serious punch on a journey city Singapore and Malaysia.',
     photoUrls: [
-      'https://4kwallpapers.com/images/wallpapers/marina-bay-sands-hotel-singapore-blue-hour-night-lights-3440x1440-2844.jpg',
+      'https://4kwallpapers.com/images/wallpapers/marina-bay-sands-hotel-singapore-blue-hour-night-lights-3440x1440-2844.jpg'
     ]
   },
   {
@@ -24,15 +24,7 @@ const itineraries = [
     photoUrls: [
       'https://i.natgeofe.com/n/0f84c896-bb7e-432a-825b-655d4621ffaa/supertrees-singapore_3x2.jpg?w=1436&h=958'
     ]
-  },
-  {
-    id: 4,
-    title: 'See the largest indoor water fall in the world',
-    description: 'Just how much mind-boggling can be packed into a 14-day holiday? Well we\'ll tell you. Our hot adventure pack serious punch on a journey city Singapore and Malaysia.',
-    photoUrls: [
-      'https://4kwallpapers.com/images/wallpapers/marina-bay-sands-hotel-singapore-blue-hour-night-lights-3440x1440-2844.jpg',
-    ]
-  },
+  }
 ]
 export const tour: TourType = {
   id: '09781021',
@@ -47,5 +39,7 @@ export const tour: TourType = {
     'https://www.marinabaysands.com/content/dam/marinabaysands/guides/around-mbs/landing/masthead-d.jpg',
     'https://i.natgeofe.com/n/0f84c896-bb7e-432a-825b-655d4621ffaa/supertrees-singapore_3x2.jpg?w=1436&h=958'
   ],
-  itinerary: itineraries.map((itinerary, index) => ({ day: index + 1, ...itinerary }))
+  itinerary: [...Array(10).keys()].flatMap((index) => {
+    return itineraries.map((itinerary, index2) => ({ day: index * itineraries.length + (index2 + 1), ...itinerary }))
+  })
 }
