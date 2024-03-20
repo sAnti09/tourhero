@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TourView from '@/components/TourView.vue'
 import { tour } from '@/store/tour'
+
 </script>
 
 <template>

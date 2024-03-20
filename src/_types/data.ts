@@ -3,6 +3,7 @@ export interface ItineraryItemType {
   day: number,
   title: string,
   description: string;
+  photoUrls: string[];
 }
 
 export interface TourType {
