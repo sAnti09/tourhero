@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TourView from '@/components/TourView.vue'
+import { tour } from '@/store/tour'
+</script>
 
 <template>
-  <h1>Hello World!</h1>
+  <TourView :tour="tour" />
 </template>
 
 <style scoped>
