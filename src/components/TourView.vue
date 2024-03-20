@@ -1,41 +1,50 @@
 <script setup lang="ts">
 import type { TourType } from '@/_types/data'
 import ItineraryItemView from '@/components/ItineraryItemView.vue'
+import Carousel from '@/components/CarouselView.vue'
 
 const { tour } = defineProps<{
   tour: TourType
 }>()
-
-const { region, country, category, name, description, itinerary, id } = tour
+const { region, country, category, name, description, itinerary, id, videoUrl, photoUrls } = tour
 
 </script>
 
 <template>
-  <div class="tour">
-    <div>
-      <div class="header">
-        <div class="breadcrumbs">
-          {{ region }} > {{ country }} > {{ category }}
+  <Carousel :photos="photoUrls"/>
+  <div class="wrapper">
+    <div class="tour">
+      <div>
+        <div class="header">
+          <div class="breadcrumbs">
+            {{ region }} > {{ country }} > {{ category }}
+          </div>
+          <div>
+            ID: {{ id }}
+          </div>
         </div>
-        <div>
-          ID: {{ id }}
-        </div>
+
+        <h1>{{ name }}</h1>
+        <div class="description">{{ description }}</div>
       </div>
 
-      <h1>{{ name }}</h1>
-      <div class="description">{{ description }}</div>
-    </div>
-
-    <h3>Itinerary</h3>
-    <div>
-      <div v-for="item in itinerary" :key="item.id">
-        <ItineraryItemView :item="item" />
+      <h3>Itinerary</h3>
+      <div>
+        <div v-for="item in itinerary" :key="item.id">
+          <ItineraryItemView :item="item" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
+.wrapper {
+  display: block;
+  margin-top: 340px;
+}
+
 .tour {
   border: solid 1px #eee;
   margin: 0 auto;
@@ -44,6 +53,7 @@ const { region, country, category, name, description, itinerary, id } = tour
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
+  background-color: white;
 
   .header {
     color: #BCBCBC;

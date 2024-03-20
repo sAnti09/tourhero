@@ -6,6 +6,10 @@
     font-weight: normal;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 a {
     color: #5ca49e;
     font-weight: 400;
