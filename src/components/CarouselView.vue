@@ -23,7 +23,7 @@ const setSwiperRef = (swiper: SwiperClass) => {
     class="carousel"
     :modules="modules"
     :virtual="true"
-    :slides-per-view="2"
+    :slides-per-view="1.3"
     :centered-slides="true"
     :space-between="15"
     :navigation="true"
@@ -69,11 +69,11 @@ const setSwiperRef = (swiper: SwiperClass) => {
   }
 
   .swiper-button-prev {
-    left: 27%
+    left: 18%
   }
 
   .swiper-button-next {
-    right: 27%
+    right: 18%
   }
 }
 </style>
